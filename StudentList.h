@@ -13,6 +13,7 @@ public:
     void insert(Student* s);
     bool remove(int id);
     void display() const;
+    Student* search(int id) const;
 };
 
 #endif

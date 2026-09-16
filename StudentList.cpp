@@ -41,3 +41,14 @@ void StudentList::display() const {
         temp = temp->next;
     }
 }
+
+Student* StudentList::search(int id) const {
+    Node* temp = head;
+    while (temp) {
+        if (temp->data->getId() == id) {
+            return temp->data; // Found student
+        }
+        temp = temp->next;
+    }
+    return nullptr; // Not found
+}
