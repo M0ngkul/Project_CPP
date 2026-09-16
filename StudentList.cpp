@@ -52,3 +52,24 @@ Student* StudentList::search(int id) const {
     }
     return nullptr; // Not found
 }
+
+void StudentList::sortByGrade() {
+    if (!head || !head->next) return; // Empty or single element list
+
+    bool swapped;
+    do {
+        swapped = false;
+        Node* current = head;
+
+        while (current->next) {
+            // Sorts in descending order (highest grade first)
+            if (current->data->getGrade() < current->next->data->getGrade()) {
+                Student* temp = current->data;
+                current->data = current->next->data;
+                current->next->data = temp;
+                swapped = true;
+            }
+            current = current->next;
+        }
+    } while (swapped);
+}

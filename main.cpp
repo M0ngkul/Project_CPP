@@ -17,7 +17,8 @@ int main()
         cout << "3. Display Students\n";
         cout << "4. Delete Student\n";
         cout << "5. Search Student by ID\n";
-        cout << "6. Exit\n";
+        cout << "6. Sort Students by Grade\n";
+        cout << "7. Exit\n";
         cout << "Enter choice: ";
         cin >> choice;
 
@@ -72,7 +73,12 @@ int main()
                 cout << "Student not found!\n";
             }
         }
-    } while (choice != 6);
+        else if (choice == 6) {             
+            list.sortByGrade();
+            cout << "Students sorted by grade successfully!\n";
+            list.display();
+        }
+    } while (choice != 7);
 
     return 0;
 }

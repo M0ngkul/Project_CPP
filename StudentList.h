@@ -14,6 +14,7 @@ public:
     bool remove(int id);
     void display() const;
     Student* search(int id) const;
+    void sortByGrade(); 
 };
 
 #endif
